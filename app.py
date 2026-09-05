@@ -44,14 +44,35 @@ def save_to_firebase(data, timestamp):
 
 # Ensure the leads file exists with a header
 def init_leads_file():
-    if not os.path.exists(LEADS_FILE):
-        with open(LEADS_FILE, mode='w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                'Timestamp', 'Name', 'Company', 'Email', 'Phone',
-                'Country', 'Destination_Port', 'Variety', 'Quantity_MT',
-                'Packaging', 'Message'
-            ])
+    try:
+        if not os.path.exists(LEADS_FILE):
+            with open(LEADS_FILE, mode='w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow([
+                    'Timestamp', 'Name', 'Company', 'Email', 'Phone',
+                    'Country', 'Destination_Port', 'Variety', 'Quantity_MT',
+                    'Packaging', 'Message'
+                ])
+    except (OSError, PermissionError) as e:
+        print(f"Notice: Cannot initialize local leads file ({e}). Firebase Firestore database will be used.")
+
+def append_to_csv_safe(row):
+    """Safely append row to local LEADS_FILE or /tmp/leads.csv without raising Errno 30 on read-only file systems."""
+    for filepath in [LEADS_FILE, os.path.join('/tmp', 'leads.csv')]:
+        try:
+            file_exists = os.path.exists(filepath)
+            with open(filepath, mode='a', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                if not file_exists:
+                    writer.writerow([
+                        'Timestamp', 'Name', 'Company', 'Email', 'Phone',
+                        'Country', 'Destination_Port', 'Variety', 'Quantity_MT',
+                        'Packaging', 'Message'
+                    ])
+                writer.writerow(row)
+            return
+        except (OSError, PermissionError) as e:
+            print(f"Notice: Could not write lead to {filepath}: {e}")
 
 @app.route('/')
 def home():
@@ -80,15 +101,13 @@ def submit_quote():
         if not name or not email or not country or not variety or not quantity:
             return jsonify({'success': False, 'message': 'Please fill out all required fields.'}), 400
 
-        # Append to CSV
-        init_leads_file()
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        with open(LEADS_FILE, mode='a', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                timestamp, name, company, email, phone,
-                country, port, variety, quantity, packaging, message
-            ])
+
+        # Safely attempt CSV append (bypasses Errno 30 on read-only serverless/cloud environments)
+        append_to_csv_safe([
+            timestamp, name, company, email, phone,
+            country, port, variety, quantity, packaging, message
+        ])
 
         # Sync to Firebase Firestore
         save_to_firebase(data, timestamp)
