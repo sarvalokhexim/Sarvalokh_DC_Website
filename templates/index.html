@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvalokh Exports and Imports | Premium Desiccated Coconut Exporter India</title>
+    <meta name="description" content="Sarvalokh Exports and Imports is a leading merchant exporter of premium desiccated coconut from South India. Sourced from FSSAI-compliant processors, delivering worldwide.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='images/logo.jpg') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Sarvalokh Exports & Imports Logo" class="brand-logo-img">
+                <div class="logo-text">
+                    <span class="brand-name">SARVALOKH</span>
+                    <span class="brand-sub">EXPORTS & IMPORTS</span>
+                </div>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#products" class="nav-link">Our Products</a>
+                <a href="#analysis" class="nav-link">Quality & Analysis</a>
+                <a href="#logistics" class="nav-link">Logistics Planner</a>
+                <a href="#quote" class="btn btn-primary btn-nav">Request Quote</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section" style="background-image: linear-gradient(rgba(10, 54, 34, 0.85), rgba(10, 54, 34, 0.85)), url('{{ url_for('static', filename='images/hero_bg.png') }}');">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge hero-badge">Merchant Exporter | South India</div>
+                <h1 class="hero-title">Premium Desiccated Coconut <br><span class="highlight">Delivered Worldwide</span></h1>
+                <p class="hero-desc">Sourced from certified, hygienic South Indian processors. Consistent quality, competitive pricing, and robust global logistics support.</p>
+                <div class="hero-actions">
+                    <a href="#quote" class="btn btn-primary btn-lg">Request a Quote <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#products" class="btn btn-secondary btn-lg">Explore Varieties</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-num" data-val="100">100%</span>
+                    <span class="stat-label">Organic Purity</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" data-val="25">25kg</span>
+                    <span class="stat-label">Standard Packing</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num" data-val="10">10+</span>
+                    <span class="stat-label">Export Countries</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="#F9F9F7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Key Pillars Section -->
+    <section class="pillars-section">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Reliable Sourcing</h3>
+                    <p>Direct partnerships with top-tier FSSAI-compliant processors in South India.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>Consistent Quality</h3>
+                    <p>Rigorous batch testing to meet stringent international physical and chemical standards.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3>Timely Delivery</h3>
+                    <p>Seamless customs documentation and shipping lines integration for on-time arrivals.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Customer Focused</h3>
+                    <p>Tailored pricing, flexible packaging, and long-term buyer relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container grid grid-2">
+            <div class="about-text">
+                <span class="section-subtitle">Who We Are</span>
+                <h2>Sourcing Excellence from South India's Coconut Belt</h2>
+                <p><strong>Sarvalokh Exports and Imports</strong> is a premier merchant exporter operating out of the rich agricultural heartlands of South India. We serve as the vital link between highly verified, advanced local coconut processing mills and quality-conscious global buyers.</p>
+                <p>By conducting rigorous mill audits, supervising production standards, and handling complete export compliance, we ensure that every batch of desiccated coconut shipped meets international food safety and shelf-life expectations.</p>
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Strict Quality Checks & Batch COA (Certificate of Analysis)</span>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>FSSAI, ISO, and Halal-Compliant Sourcing</span>
+                    </div>
+                    <div class="about-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Custom Packing (Paper bags, HDPE, customized brand print)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-wrapper">
+                <div class="about-image-card">
+                    <img src="{{ url_for('static', filename='images/variety_flakes.png') }}" alt="Desiccated Coconut Flakes Detail">
+                    <div class="image-overlay-card">
+                        <h4>South Indian Origin</h4>
+                        <p>Naturally rich in flavor and high oil content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Our Offerings</span>
+                <h2>Available Varieties & Grades</h2>
+                <p class="section-desc">We export various grades of desiccated coconut tailored for industrial, confectionery, bakery, and retail packaging applications.</p>
+            </div>
+            
+            <div class="grid grid-3 product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" onclick="openProductModal('fine')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_fine.png') }}" alt="Fine Grade Desiccated Coconut Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-snowflake"></i> Fine</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Fine Grade</h3>
+                        <p>Delicately ground, free-flowing, and snowy white. Ideal for confectionery fillings, cakes, and cookies.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" onclick="openProductModal('medium')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_medium.png') }}" alt="Medium Grade Desiccated Coconut Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-border-all"></i> Medium</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Medium Grade</h3>
+                        <p>Slightly larger granular particles. Provides an excellent textured bite for cakes, pastries, and granola.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card" onclick="openProductModal('powder')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_powder.png') }}" alt="Extra Fine Powder Grade Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-wind"></i> Powder</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Extra Fine / Powder</h3>
+                        <p>Super-fine milling for rapid integration. Widely used in chocolate fillings, dry mixes, and beverage powders.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card" onclick="openProductModal('flakes')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_flakes.png') }}" alt="Coconut Flakes Grade Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-leaf"></i> Flakes</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Flakes</h3>
+                        <p>Beautiful, thin shaved curls of coconut. Perfect for premium bakery toppings, health mixes, and decoration.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card" onclick="openProductModal('shreds')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_shreds.png') }}" alt="Coconut Shreds Grade Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-lines-leaning"></i> Shreds</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Shreds</h3>
+                        <p>Long, thin strips offering a rich, fibrous texture. Highly sought after by industrial confectionery giants.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="product-card" onclick="openProductModal('reduced_fat')">
+                    <div class="product-thumb">
+                        <img src="{{ url_for('static', filename='images/grade_reduced_fat.png') }}" alt="Reduced Fat Coconut Sample" loading="lazy">
+                        <span class="product-grade-badge"><i class="fa-solid fa-heart"></i> Low Fat</span>
+                    </div>
+                    <div class="product-card-body">
+                        <h3>Reduced Fat</h3>
+                        <p>Partially defatted coconut (fat content &lt; 50%). Ideal for diet snacks, protein bars, and health-focused foods.</p>
+                        <span class="card-action">View Specs & Sample <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal (Dynamic Content via JS) -->
+    <div class="modal-backdrop" id="productModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-preview-wrapper">
+                    <img id="modalSampleImg" src="{{ url_for('static', filename='images/grade_fine.png') }}" alt="Grade Sample Photo" class="modal-sample-img">
+                </div>
+                <div class="modal-header-info">
+                    <div class="modal-icon" id="modalIcon"><i class="fa-solid fa-snowflake"></i></div>
+                    <div>
+                        <h3 id="modalTitle">Fine Grade Desiccated Coconut</h3>
+                        <span class="badge">Premium Export Quality</span>
+                    </div>
+                </div>
+                <div class="modal-details-grid">
+                    <div class="detail-block">
+                        <h4>Description</h4>
+                        <p id="modalDesc">Detailed description here...</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4>Chemical / Physical Specs</h4>
+                        <ul class="specs-list" id="modalSpecs">
+                            <li><strong>Moisture:</strong> Max 3.0%</li>
+                            <li><strong>Fat Content:</strong> 65% ± 3%</li>
+                            <li><strong>FFA (as Lauric):</strong> Max 0.1%</li>
+                            <li><strong>SO2:</strong> Free / Max 50ppm (as per buyer requirement)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4>Culinary & Industrial Applications</h4>
+                        <p id="modalApps">Confectionery, bakery toppings, retail packs...</p>
+                    </div>
+                </div>
+                <div class="modal-footer-actions">
+                    <a href="#quote" class="btn btn-primary" onclick="selectVarietyForQuote()">Select for Quote Request</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Quality & Analysis Section -->
+    <section id="analysis" class="analysis-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Tested Specifications</span>
+                <h2>Typical Chemical & Nutritional Analysis</h2>
+                <p class="section-desc">Our desiccated coconut conforms to global standards. Toggle the calculator below to estimate nutritional yields for your custom cargo size.</p>
+            </div>
+
+            <div class="grid grid-2-3 analysis-grid">
+                <!-- Technical Parameters Grid -->
+                <div class="analysis-panel-specs">
+                    <h3>Standard Analysis Ranges</h3>
+                    <div class="table-wrapper">
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>High Quality Range (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa-solid fa-droplet text-primary"></i> Moisture</td>
+                                    <td>3.0% - 5.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-fire-flame-simple text-primary"></i> Fat (on dry basis)</td>
+                                    <td>60.0% - 68.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-dna text-primary"></i> Protein (on dry basis)</td>
+                                    <td>6.0% - 8.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-wheat-awn text-primary"></i> Carbohydrates</td>
+                                    <td>20.0% - 25.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-seedling text-primary"></i> Fiber</td>
+                                    <td>3.0% - 5.0%</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-circle-notch text-primary"></i> Ash</td>
+                                    <td>1.5% - 2.5%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Interactive Nutrient Yield Estimator -->
+                <div class="analysis-panel-calculator glass-card">
+                    <h3>Interactive Yield Calculator</h3>
+                    <p class="calc-intro">Enter your target order volume to estimate the nutritional breakdown of the desiccated coconut shipment:</p>
+                    
+                    <div class="input-group">
+                        <label for="yieldInput">Target Volume (Metric Tons - MT)</label>
+                        <div class="input-with-addon">
+                            <input type="number" id="yieldInput" value="12" min="1" max="1000" step="1">
+                            <span class="addon">MT</span>
+                        </div>
+                    </div>
+
+                    <div class="results-visualizer">
+                        <div class="visual-row">
+                            <div class="v-label"><span>Fat Mass</span> <strong id="valFat">7.20 - 8.16 MT</strong></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" id="barFat" style="width: 65%;"></div></div>
+                        </div>
+                        <div class="visual-row">
+                            <div class="v-label"><span>Carbohydrates</span> <strong id="valCarbs">2.40 - 3.00 MT</strong></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" id="barCarbs" style="width: 22.5%;"></div></div>
+                        </div>
+                        <div class="visual-row">
+                            <div class="v-label"><span>Protein Mass</span> <strong id="valProtein">0.72 - 0.96 MT</strong></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" id="barProtein" style="width: 7%;"></div></div>
+                        </div>
+                        <div class="visual-row">
+                            <div class="v-label"><span>Fiber Mass</span> <strong id="valFiber">0.36 - 0.60 MT</strong></div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" id="barFiber" style="width: 4%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="calc-disclaimer">
+                        <i class="fa-solid fa-circle-info"></i> Calculations are based on standard dry-basis percentage values. Batch COAs will provide exact values.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics Planner Section -->
+    <section id="logistics" class="logistics-section" style="background-image: linear-gradient(rgba(249, 249, 247, 0.95), rgba(249, 249, 247, 0.95)), url('{{ url_for('static', filename='images/shipping_logistics.png') }}');">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Supply Chain & Freight</span>
+                <h2>Interactive Packing & Logistics Planner</h2>
+                <p class="section-desc">Plan your bulk shipment. Use the slider to scale your order volume and view the packaging and shipping requirements.</p>
+            </div>
+
+            <div class="logistics-grid grid grid-2">
+                <div class="logistics-calculator-card glass-card">
+                    <h3>Volume Configuration</h3>
+                    
+                    <div class="slider-group">
+                        <div class="slider-labels">
+                            <span>Order Volume</span>
+                            <span class="slider-bubble" id="sliderValueBubble">12 MT</span>
+                        </div>
+                        <input type="range" id="volumeSlider" min="1" max="100" value="12" class="range-slider">
+                        <div class="slider-minmax">
+                            <span>1 MT (LCL)</span>
+                            <span>100 MT (FCL)</span>
+                        </div>
+                    </div>
+
+                    <div class="logistics-outputs">
+                        <div class="output-tile">
+                            <div class="tile-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                            <div class="tile-details">
+                                <span class="tile-label">Required 25kg Bags</span>
+                                <strong id="calcBags">480 Bags</strong>
+                            </div>
+                        </div>
+                        <div class="output-tile">
+                            <div class="tile-icon"><i class="fa-solid fa-container-storage"></i></div>
+                            <div class="tile-details">
+                                <span class="tile-label">Container Requirement</span>
+                                <strong id="calcContainers">1 x 20ft FCL (Full Container Load)</strong>
+                            </div>
+                        </div>
+                        <div class="output-tile">
+                            <div class="tile-icon"><i class="fa-solid fa-anchor"></i></div>
+                            <div class="tile-details">
+                                <span class="tile-label">Transit Ports (South India)</span>
+                                <strong>Tuticorin / Cochin Ports</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logistics-details-panel">
+                    <h3>Standard Export Packing Specifications</h3>
+                    <ul class="logistic-specs-list">
+                        <li>
+                            <i class="fa-solid fa-box"></i>
+                            <div>
+                                <strong>Multi-layer Protective Bags:</strong>
+                                <span>Export cargo packed in 25 kg Multi-layer Kraft Paper Bags or HDPE/PP woven bags with food-grade inner LDPE liner to preserve aroma and prevent moisture ingress.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-warehouse"></i>
+                            <div>
+                                <strong>Safe Warehouse Storage:</strong>
+                                <span>Stored in clean, well-ventilated, dry, and infestation-free warehouses prior to container stuffing.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-ship"></i>
+                            <div>
+                                <strong>FCL stuffing Capacity:</strong>
+                                <span>A 20ft container carries ~12 to 13 Metric Tons. A 40ft High Cube container carries ~25 Metric Tons.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Global Shipping Visualizer SVG Map -->
+            <div class="shipping-map-card glass-card">
+                <h3>South Indian Shipping Routes</h3>
+                <p class="map-intro">Hover over major global ports below to see estimated maritime transit times from South Indian loading ports:</p>
+                <div class="map-container">
+                    <svg viewBox="0 0 1000 450" class="world-svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background map grid styling (Abstracted layout) -->
+                        <rect width="1000" height="450" fill="none" />
+                        
+                        <!-- Continents Layout (Simple poly lines to outline world mapping style) -->
+                        <path d="M100,50 L200,30 L250,80 L200,150 L120,200 L80,180 Z" fill="#EAEAEA" opacity="0.3" /> <!-- North America -->
+                        <path d="M150,220 L230,260 L280,380 L230,420 L180,350 Z" fill="#EAEAEA" opacity="0.3" /> <!-- South America -->
+                        <path d="M450,50 L580,30 L650,90 L600,180 L480,150 Z" fill="#EAEAEA" opacity="0.3" /> <!-- Europe / Asia -->
+                        <path d="M480,180 L550,220 L580,340 L500,360 L440,250 Z" fill="#EAEAEA" opacity="0.3" /> <!-- Africa -->
+                        <path d="M780,280 L880,280 L900,350 L820,380 Z" fill="#EAEAEA" opacity="0.3" /> <!-- Australia -->
+
+                        <!-- Shipping Routes (Curves radiating from Tuticorin/Cochin, South India ~ X:600, Y:220) -->
+                        <!-- Route to Rotterdam (Europe) -->
+                        <path d="M 600 220 Q 520 180 490 100" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="5 5" class="route-line" id="route-rotterdam" />
+                        <!-- Route to Jebel Ali (Middle East) -->
+                        <path d="M 600 220 Q 530 200 500 170" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="5 5" class="route-line" id="route-jebel" />
+                        <!-- Route to Singapore (SE Asia) -->
+                        <path d="M 600 220 Q 680 230 720 240" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="5 5" class="route-line" id="route-singapore" />
+                        <!-- Route to New York (USA) -->
+                        <path d="M 600 220 Q 420 250 210 120" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="5 5" class="route-line" id="route-ny" />
+
+                        <!-- Origin Node (South India) -->
+                        <circle cx="600" cy="220" r="8" fill="#0A3622" class="origin-node" />
+                        <circle cx="600" cy="220" r="14" fill="none" stroke="#0A3622" stroke-width="2" class="ping-circle" />
+                        <text x="600" y="245" font-family="'Outfit', sans-serif" font-size="12" font-weight="bold" fill="#0A3622" text-anchor="middle">Port Cochin/Tuticorin</text>
+
+                        <!-- Destination Pins -->
+                        <!-- Rotterdam -->
+                        <g class="port-pin" data-port="Rotterdam" data-transit="22 Days">
+                            <circle cx="490" cy="100" r="20" fill="transparent" style="cursor: pointer;" />
+                            <circle cx="490" cy="100" r="6" fill="#D4AF37" class="pin-marker" />
+                            <text x="490" y="85" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#222" text-anchor="middle" class="pin-text">Port of Rotterdam (Europe)</text>
+                        </g>
+                        <!-- Jebel Ali -->
+                        <g class="port-pin" data-port="Jebel Ali" data-transit="8 Days">
+                            <circle cx="500" cy="170" r="20" fill="transparent" style="cursor: pointer;" />
+                            <circle cx="500" cy="170" r="6" fill="#D4AF37" class="pin-marker" />
+                            <text x="470" y="160" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#222" class="pin-text">Jebel Ali (Middle East)</text>
+                        </g>
+                        <!-- Singapore -->
+                        <g class="port-pin" data-port="Singapore" data-transit="5 Days">
+                            <circle cx="720" cy="240" r="20" fill="transparent" style="cursor: pointer;" />
+                            <circle cx="720" cy="240" r="6" fill="#D4AF37" class="pin-marker" />
+                            <text x="730" y="244" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#222" class="pin-text">Singapore (SE Asia)</text>
+                        </g>
+                        <!-- New York -->
+                        <g class="port-pin" data-port="New York" data-transit="28 Days">
+                            <circle cx="210" cy="120" r="20" fill="transparent" style="cursor: pointer;" />
+                            <circle cx="210" cy="120" r="6" fill="#D4AF37" class="pin-marker" />
+                            <text x="210" y="105" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#222" text-anchor="middle" class="pin-text">New York Port (USA)</text>
+                        </g>
+                    </svg>
+                    <!-- Popover details for active routing -->
+                    <div class="map-tooltip" id="mapTooltip">Hover over a port to see shipping details.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Request a Quote Section -->
+    <section id="quote" class="quote-section">
+        <div class="container container-narrow">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Direct Enquiries</span>
+                <h2>Request an Export Quote</h2>
+                <p class="section-desc">Submit your specifications, and we will prepare a complete CIF or FOB pricing quote tailored to your target port.</p>
+            </div>
+
+            <!-- Form Message Banners -->
+            <div id="formSuccess" class="form-feedback success-banner hidden">
+                <i class="fa-solid fa-circle-check"></i>
+                <span id="successMsg">Thank you! Your quote request has been recorded.</span>
+            </div>
+            <div id="formError" class="form-feedback error-banner hidden">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span id="errorMsg">Please fix the highlighted errors.</span>
+            </div>
+
+            <!-- Quote Form -->
+            <form id="quoteForm" class="quote-form glass-card" novalidate>
+                <div class="form-grid grid grid-2">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Global Foods Inc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 019-2834">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country of Import <span class="required">*</span></label>
+                        <input type="text" id="country" name="country" placeholder="Netherlands" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="port">Target Discharge Port</label>
+                        <input type="text" id="port" name="port" placeholder="Port of Rotterdam">
+                    </div>
+                    <div class="form-group">
+                        <label for="variety">Coconut Variety <span class="required">*</span></label>
+                        <select id="variety" name="variety" required>
+                            <option value="" disabled selected>Select Variety...</option>
+                            <option value="Fine">Fine Grade</option>
+                            <option value="Medium">Medium Grade</option>
+                            <option value="Powder">Extra Fine / Powder</option>
+                            <option value="Flakes">Flakes</option>
+                            <option value="Shreds">Shreds</option>
+                            <option value="Reduced Fat">Reduced Fat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Expected Quantity (Metric Tons) <span class="required">*</span></label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="12" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="packaging">Packaging Preference</label>
+                    <select id="packaging" name="packaging">
+                        <option value="Standard 25kg PP/HDPE bag">Standard 25kg PP/HDPE bag with Inner Liner</option>
+                        <option value="Standard 25kg Multi-layer Kraft Paper Bag">Standard 25kg Kraft Paper Bag</option>
+                        <option value="Custom Packing / Private Label">Custom Packing / Private Label (Specify below)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Special Specifications or Comments</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter special chemical index specifications (e.g. customized fat levels, SO2 ppm limits), delivery terms, etc."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
+                    <span>Submit Quote Request</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Details -->
+    <footer class="footer-section">
+        <div class="container footer-grid grid grid-3">
+            <div class="footer-col-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Sarvalokh Exports & Imports Logo" class="brand-logo-img">
+                    <div class="logo-text">
+                        <span class="brand-name">SARVALOKH</span>
+                        <span class="brand-sub">EXPORTS & IMPORTS</span>
+                    </div>
+                </a>
+                <p class="brand-bio">Connecting South India's finest coconut processors with global industries, ensuring premium quality standards from plantation to port.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col-links">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#analysis">Quality Analysis</a></li>
+                    <li><a href="#logistics">Logistics Planner</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col-contact">
+                <h3>Contact Export Desk</h3>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><a href="mailto:contact@sarvalokh.com">contact@sarvalokh.com</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span><a href="tel:+918019011703">+91 80190 11703</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-globe"></i>
+                        <span><a href="http://www.sarvalokh.com">www.sarvalokh.com</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>South India (Cochin, Tuticorin Hubs) <br>India</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Sarvalokh Exports and Imports. All Rights Reserved.</p>
+                <p>Designed for Global Trading Standards</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/918019011703" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-badge">Chat Online</span>
+    </a>
+
+    <!-- Main Client Script -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
