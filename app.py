@@ -3,10 +3,44 @@ import csv
 from datetime import datetime
 from flask import Flask, render_template, request, jsonify
 
+import json
+import urllib.request
+
 app = Flask(__name__)
 
 # File path for storing leads
 LEADS_FILE = 'leads.csv'
+FIREBASE_PROJECT_ID = 'sarvalokhdcwebsite'
+FIREBASE_FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{FIREBASE_PROJECT_ID}/databases/(default)/documents/quotes"
+
+def save_to_firebase(data, timestamp):
+    """Save quote payload to Firebase Firestore database via REST API."""
+    try:
+        payload = {
+            "fields": {
+                "name": {"stringValue": str(data.get('name', '')).strip()},
+                "company": {"stringValue": str(data.get('company', '')).strip()},
+                "email": {"stringValue": str(data.get('email', '')).strip()},
+                "phone": {"stringValue": str(data.get('phone', '')).strip()},
+                "country": {"stringValue": str(data.get('country', '')).strip()},
+                "destination_port": {"stringValue": str(data.get('port', '')).strip()},
+                "variety": {"stringValue": str(data.get('variety', '')).strip()},
+                "quantity_MT": {"stringValue": str(data.get('quantity', '')).strip()},
+                "packaging": {"stringValue": str(data.get('packaging', '')).strip()},
+                "message": {"stringValue": str(data.get('message', '')).strip()},
+                "created_at": {"stringValue": timestamp}
+            }
+        }
+        req = urllib.request.Request(
+            FIREBASE_FIRESTORE_URL,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json'},
+            method='POST'
+        )
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            pass
+    except Exception as e:
+        print(f"Warning: Firebase sync failed: {e}")
 
 # Ensure the leads file exists with a header
 def init_leads_file():
@@ -55,6 +89,9 @@ def submit_quote():
                 timestamp, name, company, email, phone,
                 country, port, variety, quantity, packaging, message
             ])
+
+        # Sync to Firebase Firestore
+        save_to_firebase(data, timestamp)
 
         return jsonify({
             'success': True,

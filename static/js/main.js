@@ -1,6 +1,26 @@
 /* ==========================================================================
-   Sarvalokh Exports & Imports - Client Logic
+   Firebase Configuration & Initialization
    ========================================================================== */
+const firebaseConfig = {
+  apiKey: "AIzaSyCSzBZj5jbqaDQVAMn_um4oCwWqpQQbs28",
+  authDomain: "sarvalokhdcwebsite.firebaseapp.com",
+  projectId: "sarvalokhdcwebsite",
+  storageBucket: "sarvalokhdcwebsite.firebasestorage.app",
+  messagingSenderId: "86411889019",
+  appId: "1:86411889019:web:73a816dac3f2c5d79fd5de",
+  measurementId: "G-3DM791N10T"
+};
+
+let db = null;
+if (typeof firebase !== 'undefined') {
+    try {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        console.log("Firebase Firestore connected successfully.");
+    } catch (err) {
+        console.error("Firebase init error:", err);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
@@ -467,10 +487,29 @@ function initQuoteForm() {
                 return;
             }
             
-            // Disable button during submit
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Processing Request...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
-            
+            // Save to Firebase Firestore from client-side
+            if (db) {
+                try {
+                    await db.collection("quotes").add({
+                        name: name,
+                        company: company,
+                        email: email,
+                        phone: phone,
+                        country: country,
+                        destination_port: port,
+                        variety: variety,
+                        quantity_MT: quantity,
+                        packaging: packaging,
+                        message: message,
+                        created_at: firebase.firestore.FieldValue.serverTimestamp(),
+                        timestamp: new Date().toISOString()
+                    });
+                    console.log("Quote successfully stored in Firebase Firestore");
+                } catch (fbErr) {
+                    console.warn("Client-side Firebase store warning:", fbErr);
+                }
+            }
+
             try {
                 const response = await fetch('/submit_quote', {
                     method: 'POST',
